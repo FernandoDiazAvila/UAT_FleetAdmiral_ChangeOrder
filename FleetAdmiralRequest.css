@@ -1,0 +1,17 @@
+/*                        Fernando Diaz Avila's Assignment
+As per Fleet Admiral's Request Launch Program Webpage shall appear User Friendly.
+*/
+
+/*Made only the header white to contrast the dark blue background*/
+h1{color: white;
+}
+p{  /*Here I will change the font to look a little more of a countdown. Than add some colour and a page boarder*/
+    text-align: center;
+    font: size xx-large;
+    color: red;
+    font-weight: bold;
+    align-content: center;
+    font-family: 'Courier New';
+
+}
+/*Will later add the button style tag information in this css file at when finished with all the functions.*/

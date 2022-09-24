@@ -1,0 +1,52 @@
+<!--                        Fernando Diaz Avila's Assignment
+    Planning:
+        I can refrence all my previous codes and work my way top down for each file (HTML, JS, & CSS). For the half
+        way warning I can use the If/else function either inside the loop at the start to check when the countdown 
+        is <= 5 to display the message. Or after the program has display the current time, But before adding that finction
+        I will manipulate the string to be outputted onto the webpage rather than the console log. From there after all
+        my code runs smoothly I will decorate the Launch button, and website.
+
+    What do I need to have?;
+        Im required to add an If/else stament for the half way warning,and create a great user experience.
+    What can I do to improve for next time?
+        I will like to try finding the font that the alarm clocks have to be only for the time and attempt to add sound 
+        for the countdown and warnings.
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--These four tags will remain the same I only updated the title.-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UAT Space Program3.0</title> 
+
+        <!--Now that Im added more style elements I moved all my previous style tags into a paragh in a new css file, to
+        maintain an organized HTML file. This here links the css file to this HTML-->
+        <link rel="stylesheet" href="FleetAdmiralRequest.css">
+        <script src="Efficiency.js"></script> 
+
+        <!--I will reseach if their are different types of borders for my next assognment.-->
+        <h1 style="text-align:center; border: 10px solid #00ffff;">
+            UAT Space Program Launch system </h1>
+
+            
+    </head>
+    
+
+    <body style="text-align:center; background-color: #00264d;">
+        <img src="https://synchronic.uat.edu/courses/5371/files/732245/download?wrap=1" width="300px" height="300px">
+        <!--Added a break tag to seperate the button from the UAT logo so that it will appear underneath instead of 
+            being next the logo.-->
+        <br>
+        <!--After everything else works, Ill write the button style tags here to see if it displays properly, than move
+        it to the css file to see if it works from there.-->
+        <button id="b" onclick = "RunCountDown()"> Launch</button> 
+        <p id= "DisplayCountDown">Launching in 10</p>
+        <p id="DisplayBlastOff"></p> 
+        
+    </body>
+</html>
+
+<!--Now that I have reviewed and tweaked my HTML file I wont edit it anymore, to not cause any erros and end up having to
+through it top down again.-->
