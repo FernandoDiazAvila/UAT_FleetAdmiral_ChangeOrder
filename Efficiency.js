@@ -1,57 +1,48 @@
 /*                      Fernando Diaz Avila's Assignment
-Here I have my loop functions, countdown display, and comments.;
-
 As per The Fleet Admiral's request I shall update my code to display a visual warning to 
 display when the coundown is half way complete.
 */
 
-//Ima work top down and test each line of code everytime I change to debug any errors.
-
+//Im will work top down and test each line of code everytime I change to debug any errors.
 
 alert ("Are you ready to Launch?"); //return it to the previous alert message as I intend to display the time on the 
                                     //webpage this time.
 
 let currentTime=10;
-//document.getElementById("DisplayCountDown").innerHTML = currentTime;
+//After reading the etext Eloquent JavaScript looking for functions and after explaining what this does, and 
+//explaining my struggles with my dad, I learned from is perspective that the code works and is displaying every
+//decriment but extremly fast for us to see. So I searched how to sloed down a JS loop. As well I discovered it will work as
+//a function within another function.
 
 function RunCountDown() {
-while(currentTime >0)       //using the while loop will continue to run the function statements until the condition
-                            //of currentTime is no longer greater than 0.
-                            
-{
+     while (currentTime >= 0) {
+        delay(currentTime); //Here is my loop delay function. 
+        currentTime --;          
+     }
 
-document.getElementById("DisplayCountDown").innerHTML = "Launching in "+currentTime;
-//console.log(currentTime); //Here I made it a comment to rework it to display the var as a string.
-//review string manipulation notes... I will use this stamente to display the var.
+    function delay(currentTime) { //withing this function I added a setTimeout functions which has the program wait
+      setTimeout(function() {     //some time or interval measured in miliseconds.
+        document.getElementById("DisplayCountDown").innerHTML = "Launching in...";
+        console.log(currentTime); 
 
-
-document.getElementById("DisplayCountDown").innerHTML = currentTime --; 
-   //After logging the previous current time, I update the curent time by decreminting it's value
-       
-    if (currentTime !=0)    
-    //Than I have the code check the currentTime to compare its value to zero.
-    {document.getElementById("DisplayCountDown").innerHTML = currentTime;
-}
- 
-    // if they dont match display it's current value
-    else
-    {document.getElementById("DisplayBlastOff").innerHTML = "Blast Off!";}
-    //if they do match display the result or string "Blast off"
-
-}
-
-}
-/*
-reference for my loop function:
-
-var countDown = 10;
-document.getElementById("DisplayCountDown").innerHTML = countDown;
-function RunCountDown()
-{
-    countDown --;
-if(countDown != 0 )
-    {document.getElementById("DisplayCountDown").innerHTML = countDown;}
+    //I moved my if/else statment inside this function so everyime the program does loop it will wait before doing it again.
+        if (currentTime !=0)    
+            {document.getElementById("DisplayCountDown").innerHTML = currentTime;}
         else
-    {document.getElementById("DisplayBlastOff").innerHTML = "Blast Off!";}
-}
-*/
+            {document.getElementById("DisplayBlastOff").innerHTML = "Blast Off!";}
+
+        //For the half way warning I will simply add another if statement to compare the currentTime to be less than or equal to 5
+        //with it appearing it everytime.I thought it be cool if the number changes as well so it wouldn't be a warning 1/2 til luanch
+        //only when the currentTime is at 5 and either stays of disappear for the rest of the currentTime.
+        if (currentTime <=5)                                        
+            {document.getElementById("DisplayCountDown").innerHTML = "Warning Less than "+currentTime+" seconds until launch";}
+    //on line 34 I impplemented what I learned from the discussion meeting, of adding string and variables together.
+      }, 1500 * currentTime);
+    }}
+
+/* Alright so now My only issue is that after working in styling with the button, my countdown is going backwards.
+So I copied this file and history back before I change the button's appearence. that didn't resolve it. I than tried switching
+the operator to addition but the code didn't run. I attempted writing a line of code were it will display the result of an equation
+of 10 - the currentTime to reverse the result but the program didn't want to have an integer before a variable. So the farthest I gone is
+displaying blast off first with the warning half way message, and once the code counted up to 6 the half way message disappeard, and
+it stopped counting when it reached 10*/
